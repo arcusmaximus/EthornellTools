@@ -1,0 +1,34 @@
+To enable proportional text rendering (in case you get overlapping half-width characters ingame):
+- Disassemble all ._bp scripts
+
+- Open the disassembly of scrmsg._bp, find the "graphcall 91:88" instruction (which calls the
+  "configureFormatInfo" system function), and look where its second argument from the bottom
+  (bProportional) comes from. Then find the script which writes to this address and change
+  the value to 1.
+  
+  For example: the second argument of the graphcall instruction is the byte at address 198FC+12928+6.
+  Searching the folder of disassembled scripts for the text "12928" shows that userdata._bp writes
+  to this address. Open the ._bp script in a hex editor, go to the offset shown in the disassembly,
+  and change the value loading instruction from "push 0" (00 00) to "push 1" (00 01).
+
+- Find relevant "graphcall 92:9C" instructions (which call the "renderText" system function) in
+  scrmsg._bp (character name), logwnd._bp (backlog) and scrslct._bp (choice screen) and change
+  their 9th argument (counting from the bottom) to 1.
+
+To change font size (for games with V1 scenario files, that is, files with the header "BurikoCompiledScriptVer1.00"):
+- Optionally, find the "graphcall 91:88" instruction in srcmsg._bp and confirm that it's called from scenario opcode 14C
+  (which sets formatting options for the message window). To mark the scenario opcode handlers in the ._bp files,
+  you can uncomment the AssignOpcodeHandlerNames() function in the disassembler's Program.cs and change the
+  "push 14FE0" in the regular expression to the correct address of the opcode handler table.
+
+- Find the scenario file which calls this scenario opcode (e.g. "function") and change the second argument. For example:
+  00 00 00 00 00 00 00 00    // push 0       <- bold
+  00 00 00 00 1C 00 00 00    // push 1C      <- font size
+  00 00 00 00 00 00 00 00    // push 0       <- font family
+  4C 01 00 00                // set message window format
+  
+  Note that the opcode may appear multiple times with different font sizes: one for regular lines, one for whispering,
+  one for yelling etc. If changing one font size has no effect ingame, try another.
+
+- Find the two "graphcall 92:9C" instructions in logwnd._bp and change their 12th argument
+  (counting from the bottom) to the new font size.
