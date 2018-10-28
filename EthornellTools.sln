@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BgiDisassembler", "BgiDisassembler\BgiDisassembler.csproj", "{5BF9C329-7836-4D0F-A1E8-9DA90166A2AD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BgiImageEncoder", "BgiImageEncoder\BgiImageEncoder.csproj", "{F3AD6478-1524-476D-A8C4-D152CFEFB78F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5BF9C329-7836-4D0F-A1E8-9DA90166A2AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BF9C329-7836-4D0F-A1E8-9DA90166A2AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5BF9C329-7836-4D0F-A1E8-9DA90166A2AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BF9C329-7836-4D0F-A1E8-9DA90166A2AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3AD6478-1524-476D-A8C4-D152CFEFB78F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3AD6478-1524-476D-A8C4-D152CFEFB78F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3AD6478-1524-476D-A8C4-D152CFEFB78F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3AD6478-1524-476D-A8C4-D152CFEFB78F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A91B1C40-2F4F-40E8-AAAC-3D72CA286D62}
+	EndGlobalSection
+EndGlobal
