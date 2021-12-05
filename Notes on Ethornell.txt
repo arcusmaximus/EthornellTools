@@ -1,8 +1,17 @@
+Ethornell has two virtual machines, each with its own instruction set:
+
+- A VM for internal scripts, which are more or less the same for every game.
+  The VM is implemented in C++ in BGI.exe, and the scripts have extension ._bp;
+  it's these scripts that BgiDisassembler targets.
+
+- A VM for scenario files, which contain the narration, dialogue, choices etc.
+  This VM is implemented in scrmsg._bp, and the scenario files have no extension.
+
 To enable proportional text rendering (in case you get overlapping half-width characters ingame):
 - Disassemble all ._bp scripts
 
 - Open the disassembly of scrmsg._bp, find the "graphcall 91:88" instruction (which calls the
-  "configureFormatInfo" system function), and look where its second argument from the bottom
+  "ConfigureFormatInfo" system function), and look where its second argument from the bottom
   (bProportional) comes from. Then find the script which writes to this address and change
   the value to 1.
   
@@ -11,12 +20,12 @@ To enable proportional text rendering (in case you get overlapping half-width ch
   to this address. Open the ._bp script in a hex editor, go to the offset shown in the disassembly,
   and change the value loading instruction from "push 0" (00 00) to "push 1" (00 01).
 
-- Find relevant "graphcall 92:9C" instructions (which call the "renderText" system function) in
-  scrmsg._bp (character name), logwnd._bp (backlog) and scrslct._bp (choice screen) and change
-  their 9th argument (counting from the bottom) to 1.
+- Find relevant "graphcall 92:9C" instructions (which call the "RenderText" system function) in
+  bitmap._bp/scrmsg._bp (character name), logwnd._bp (backlog) and scrslct._bp (choice screen)
+  and change their 9th argument (counting from the bottom) to 1.
 
 To change font size (for games with V1 scenario files, that is, files with the header "BurikoCompiledScriptVer1.00"):
-- Optionally, find the "graphcall 91:88" instruction in srcmsg._bp and confirm that it's called from scenario opcode 14C
+- Optionally, find the "graphcall 91:88" instruction in scrmsg._bp and confirm that it's called from scenario opcode 14C
   (which sets formatting options for the message window). To mark the scenario opcode handlers in the ._bp files,
   you can uncomment the AssignOpcodeHandlerNames() function in the disassembler's Program.cs and change the
   "push 14FE0" in the regular expression to the correct address of the opcode handler table.
