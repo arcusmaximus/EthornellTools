@@ -65,8 +65,8 @@ To change font size (for games with V1 scenario files, that is, files with the h
   
 ## Image patching
 Most images can be extracted using GARbro and re-encoded with the "BgiImageEncoder" tool in this repository.
-Some other images, however, are bitmaps with part of the header stripped (e.g. GUI images). These can instead
-be converted to .bmp using the [AE VN Tools](http://wks.arai-kibou.ru/ae.php) and then edited using a tool
-capable of handling BMPs with an alpha channel (e.g. [Pixelformer](http://www.qualibyte.com/pixelformer/)).
-When done, simply remove the .bmp extension and you're done; Ethornell will accept the file even if the
+Some other images, however, are bitmap files with part of the header stripped (e.g. the GUI images in sysgrp.arc).
+These can instead be converted to regular .bmp files using the [AE VN Tools](http://wks.arai-kibou.ru/ae.php) and then
+edited using a tool capable of handling BMPs with an alpha channel (e.g. [Pixelformer](http://www.qualibyte.com/pixelformer/)).
+Afterwards, simply remove the .bmp extension and you're done; Ethornell will accept the file even if the
 full header is present.
