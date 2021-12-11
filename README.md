@@ -62,11 +62,3 @@ To change font size (for games with V1 scenario files, that is, files with the h
 
 * Find the two `graphcall 92:9C` instructions in logwnd.\_bp and change their 12th argument
   (counting from the bottom) to the new font size.
-  
-## Image patching
-Most images can be extracted using GARbro and re-encoded with the "BgiImageEncoder" tool in this repository.
-Some other images, however, are bitmap files with part of the header stripped (e.g. the GUI images in sysgrp.arc).
-These can instead be converted to regular .bmp files using the [AE VN Tools](http://wks.arai-kibou.ru/ae.php) and then
-edited using a tool capable of handling BMPs with an alpha channel (e.g. [Pixelformer](http://www.qualibyte.com/pixelformer/)).
-Afterwards, simply remove the .bmp extension and you're done; Ethornell will accept the file even if the
-full header is present.
