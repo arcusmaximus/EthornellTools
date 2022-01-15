@@ -15,8 +15,8 @@ Ethornell has two script formats, each with its own VM and instruction set:
   extension .\_bp; it's these scripts that BgiDisassembler targets.
 
 * Another format for scenario files, which contain the narration, dialogue, choices etc.
-  specific to the game. This VM is implemented in scrmsg.\_bp, and the scenario files have no extension.
-  Their text content can be extracted and patched using VNTextPatch.
+  specific to the game. This VM is implemented across various scr\*.\_bp files, and the scenario files
+  have no extension. Their text content can be extracted and patched using VNTextPatch.
 
 ### Fixing half-width text rendering
 Ethornell games tend to make a mess when displaying half-width characters (making them overlap).
