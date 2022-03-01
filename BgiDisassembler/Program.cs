@@ -28,6 +28,7 @@ namespace Arc.Ddsi.BgiDisassembler
         {
             foreach (string filePath in Directory.EnumerateFiles(folderPath, "*._bp"))
             {
+                Console.WriteLine(Path.GetFileName(filePath));
                 DisassembleFile(filePath);
             }
         }

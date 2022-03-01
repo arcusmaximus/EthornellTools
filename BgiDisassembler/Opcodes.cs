@@ -73,7 +73,7 @@
             "muldiv",           // 42
             "arctan",           // 43
             "veclen",           // 44
-            null,               // 45
+            "op45",             // 45
             null,               // 46
             null,               // 47
             "sin",              // 48
@@ -89,17 +89,17 @@
             "mul64",            // 52
             "div64",            // 53
             "mod64",            // 54
-            null,               // 55
-            null,               // 56
-            null,               // 57
-            null,               // 58
-            null,               // 59
-            null,               // 5A
-            null,               // 5B
+            "op55",             // 55
+            "mul64high",        // 56
+            "op57",             // 57
+            "addpd",            // 58
+            "subpd",            // 59
+            "mulp",             // 5A
+            "op5B",             // 5B
             null,               // 5C
-            null,               // 5D
-            null,               // 5E
-            null,               // 5F
+            "op5D",             // 5D
+            "op5E",             // 5E
+            "op5F",             // 5F
             "memcpy",           // 60
             "memclear",         // 61
             "memset",           // 62
@@ -128,10 +128,10 @@
             "message",          // 79
             "assert",           // 7A
             "dumpmem",          // 7B
-            "7C",               // 7C
-            "7D",               // 7D
+            "op7C",             // 7C
+            "op7D",             // 7D
             "setclipboardtext", // 7E
-            "7F",               // 7F
+            "op7F",             // 7F
             "syscall",          // 80
             "syscall",          // 81
             null,               // 82
@@ -212,7 +212,7 @@
             null,               // CD
             null,               // CE
             null,               // CF
-            null,               // D0
+            "extcall",          // D0
             null,               // D1
             null,               // D2
             null,               // D3
@@ -228,7 +228,7 @@
             null,               // DD
             null,               // DE
             null,               // DF
-            null,               // E0
+            "extcall",          // E0
             null,               // E1
             null,               // E2
             null,               // E3
